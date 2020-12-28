@@ -1,0 +1,60 @@
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: cadetblue;
+    min-height: 100%;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    text-shadow: 2px 2px 20px;
+}
+
+#addBook{
+    text-align: center;
+}
+
+#newBook{
+    margin-bottom: 2em;
+    background-color: rgb(86, 134, 136);
+    height: 3em;
+    width: 8em;
+    font-size: medium;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid rgb(41, 70, 70);
+    border-radius: 10%;
+}
+
+table{
+    margin: 1em 2em 1em 2em;
+    border: 3px solid black;
+    height: 15em;
+    width: 13em;
+    text-align: center;
+    font: small;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: -5px 8px 2px;
+    border-radius: 8px 0 0 8px;
+}
+
+table button{
+    background-color: rgb(86, 134, 136);
+    height: 3em;
+    width: 8em;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid rgb(41, 70, 70);
+    border-radius: 5%;    
+}
+
+.displayBooks{
+    margin-top:1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
