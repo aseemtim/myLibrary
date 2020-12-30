@@ -1,10 +1,10 @@
 let myLibrary=[]
 
 function Book(title,author,pages,read){
-    this.title=title;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
+    this.title="Title: "+title;
+    this.author="Author: "+author;
+    this.pages="Pages: "+pages;
+    this.read="Status: "+read;
 }
 
 function addBookToLibrary(){
@@ -23,6 +23,7 @@ function createBook(){
     for(let i=0;i<myLibrary.length;i++){
         let bookTable = document.createElement('table');
         bookTable.setAttribute('class','bookTable')
+
         for (const key in myLibrary[i]) {
             console.log(key);
             let tableRow = document.createElement('tr');
@@ -31,19 +32,21 @@ function createBook(){
             tableRow.appendChild(rowData);
             bookTable.appendChild(tableRow);
         }
+
         for(let j=0;j<2;j++){
             tableRow = document.createElement('tr');
             rowData = document.createElement('td');
+            rowData.setAttribute('data-index', i);
             if(j==0){
-                rowData.innerHTML="<button onclick = '' class='changeStatus'>Change Status</button";
+                rowData.innerHTML="<button onclick = 'toggleStatus(this.parentNode.dataset.index)' class='changeStatus'>Change Status</button";
             }
             else{
                 rowData.innerHTML="<button class='deleteBook' onclick = 'delBook(this.parentNode.dataset.index)'>Delete Book</button>";
-                rowData.setAttribute('data-index', i);
             }
             tableRow.appendChild(rowData);
             bookTable.appendChild(tableRow);
         };
+
         bookContainer.appendChild(bookTable);
         console.log(rowData);
         console.log(bookContainer.childElementCount );
@@ -56,20 +59,33 @@ function clearScreen(){
     }
 }
 
+function toggleStatus(indexNum){
+    clearScreen();
+    console.log(myLibrary[indexNum]);
+    let readData = myLibrary[indexNum].read.toLowerCase();
+    if(readData.indexOf("no")==-1){
+        myLibrary[indexNum].read="Status: Not Read Yet";
+    }
+    else{
+        myLibrary[indexNum].read="Status: Read";
+    }
+    createBook();
+}
+
 function delBook(indexNum) {
     myLibrary.splice(indexNum,1);
     console.log(myLibrary);
     createBook();
 }
 
+
 const bookContainer = document.querySelector(".displayBooks");
+const addBtn = document.querySelector('#newBook');
 let inputTitle;
 let inputAuthor;
 let inputPages;
 let inputRead;
 
-
-const addBtn = document.querySelector('#newBook');
 addBtn.onclick= () => addBookToLibrary();
 
 
