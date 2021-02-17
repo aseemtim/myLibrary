@@ -1,11 +1,13 @@
 let myLibrary=[]
-
-function Book(title,author,pages,read){
-    this.title="Title: "+title;
-    this.author="Author: "+author;
-    this.pages="Pages: "+pages;
-    this.read="Status: "+read;
+class Book{
+    constructor(title,author,pages,read){
+        this.title="Title: "+title;
+        this.author="Author: "+author;
+        this.pages="Pages: "+pages;
+        this.read="Status: "+read;
+    }
 }
+
 
 function addBookToLibrary(){
     inputTitle=prompt("Enter the title of the book");
