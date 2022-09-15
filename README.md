@@ -1,7 +1,7 @@
 # myLibrary
 A simple library website to store info about books.
 
-Made this to learn about JavaScript prototype
+Made this to solidy my understanding about JavaScript class
 
 Future Implementation:
   * form 
