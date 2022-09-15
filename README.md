@@ -3,6 +3,8 @@ A simple library website to store info about books.
 
 Made this to learn about JavaScript prototype
 
-No form and storage implementation!
+Future Implementation:
+  * form 
+  * local storage
 
 Check it out at:  https://aseemtim.github.io/myLibrary/
